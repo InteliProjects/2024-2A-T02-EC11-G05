@@ -1,0 +1,11 @@
+{
+    "position": 1,
+    "label": "Análise Financeira",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontram-se todos os artefatos relacionados a Análise Financeira."
+    }
+  }

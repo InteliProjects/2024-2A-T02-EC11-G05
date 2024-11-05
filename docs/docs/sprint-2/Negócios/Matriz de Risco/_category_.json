@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Negócios",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontram-se todos os artefatos relacionados a Matriz de Risco ."
+    }
+  }

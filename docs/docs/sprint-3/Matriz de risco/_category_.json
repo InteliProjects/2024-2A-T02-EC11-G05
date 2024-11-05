@@ -1,0 +1,11 @@
+{
+    "position": 1,
+    "label": "Matriz de Risco",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontra-se a Matriz de Risco"
+    }
+  }

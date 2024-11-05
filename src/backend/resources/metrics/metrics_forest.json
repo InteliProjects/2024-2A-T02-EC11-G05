@@ -1,0 +1,14 @@
+{
+    "processed_image": "resources/processed/result_forest.png",
+    "processing_time": 1.2341125011444092,
+    "forest_pixels": 89896,
+    "total_area_m2": 8.989600000000001,
+    "estimated_trees_min": 35,
+    "estimated_trees_max": 44,
+    "estimated_trees_central": 40,
+    "total_co2": 1941.7535999999998,
+    "total_oxygen": 4733.024399999999,
+    "total_water": 5581328.004,
+    "total_soil": 8090.639999999999,
+    "total_species": 404.5319999999999
+}

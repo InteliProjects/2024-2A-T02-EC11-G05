@@ -1,0 +1,13 @@
+{
+    "position": 3,
+    "label": "Modelos",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "title": "Modelos",
+      "description": "Nesta secção encontra-se os modelos desenvolvidos."
+    }
+  }
+  

@@ -1,0 +1,11 @@
+{
+    "position": 4,
+    "label": "Condições de Implementação",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontra-se as condições de implementação"
+    }
+  }

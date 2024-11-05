@@ -1,0 +1,13 @@
+{
+    "position": 1,
+    "label": "Arquitetura e Requisitos do sistema",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "title": "Arquitetura e Requisitos do sistema.",
+      "description": "Nesta secção encontra-se a Arquitetura e os requisitos do sistema."
+    }
+  }
+  

@@ -1,0 +1,11 @@
+{
+    "position": 1,
+    "label": "Metricas de Avaliação do Modelo",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontram-se as Metricas de Avaliação do Modelo"
+    }
+  }

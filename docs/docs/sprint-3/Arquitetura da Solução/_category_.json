@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Arquietura da Solução",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontra-se a Arquietura da Solução."
+    }
+  }

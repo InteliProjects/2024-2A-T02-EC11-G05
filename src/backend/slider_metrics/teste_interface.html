@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas ambientais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        .metric {
+            margin-bottom: 20px;
+        }
+        .metric label {
+            font-weight: bold;
+        }
+        .metric input[type="range"] {
+            width: 100%;
+        }
+        .metric output {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Estatísticas ambientais</h1>
+
+        <div class="metric">
+            <label for="numTrees">Ajudando a salvar</label>
+            <input type="number" id="numTrees" value="1" min="1" step="1">
+            <p>você também estará ajudando a:</p>
+        </div>
+
+        <div class="metric">
+            <label for="co2Sequestered">Sequestrar CO2 (kg): <output id="co2Output">192000</output></label>
+            <input type="range" id="co2Sequestered" min="0" max="500000" value="192000" step="1000">
+        </div>
+
+        <div class="metric">
+            <label for="oxygenProduced">Produzir O2 (kg): <output id="oxygenOutput">468000</output></label>
+            <input type="range" id="oxygenProduced" min="0" max="1000000" value="468000" step="1000">
+        </div>
+
+        <div class="metric">
+            <label for="waterRetained">Reter água (litros): <output id="waterOutput">13797000</output></label>
+            <input type="range" id="waterRetained" min="0" max="20000000" value="13797000" step="1000">
+        </div>
+
+        <div class="metric">
+            <label for="soilPreserved">Preservar solo (kg): <output id="soilOutput">800000</output></label>
+            <input type="range" id="soilPreserved" min="0" max="2000000" value="800000" step="1000">
+        </div>
+
+        <div class="metric">
+            <label for="speciesSupported">Proteger espécies: <output id="speciesOutput">1000</output></label>
+            <input type="range" id="speciesSupported" min="0" max="5000" value="1000" step="10">
+        </div>
+    </div>
+
+    <div class="legend">
+        <h3>Legenda</h3>
+        <p><strong>CO2 Sequestrado:</strong> 1 árvore sequestra cerca de 48 kg de CO2 por ano.</p>
+        <p><strong>Oxigênio Produzido:</strong> 1 árvore gera aproximadamente 117 kg de oxigênio por ano.</p>
+        <p><strong>Água Retida:</strong> 1 árvore retém até 378 litros de água por dia.</p>
+        <p><strong>Solo Preservado:</strong> 1 árvore previne a perda de cerca de 200 kg de solo por ano.</p>
+        <p><strong>Biodiversidade Suportada:</strong> 1 árvore pode abrigar até 10 espécies diferentes.</p>
+    </div>
+    
+    <style>
+        .legend {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+
+    <script>
+        const numTreesInput = document.getElementById("numTrees");
+        const co2SequesteredInput = document.getElementById("co2Sequestered");
+        const oxygenProducedInput = document.getElementById("oxygenProduced");
+        const waterRetainedInput = document.getElementById("waterRetained");
+        const soilPreservedInput = document.getElementById("soilPreserved");
+        const speciesSupportedInput = document.getElementById("speciesSupported");
+
+        const co2Output = document.getElementById("co2Output");
+        const oxygenOutput = document.getElementById("oxygenOutput");
+        const waterOutput = document.getElementById("waterOutput");
+        const soilOutput = document.getElementById("soilOutput");
+        const speciesOutput = document.getElementById("speciesOutput");
+
+        const CO2_PER_TREE = 48 * 40; // kg per tree over 40 years
+        const OXYGEN_PER_TREE = 117 * 40; // kg per tree over 40 years
+        const WATER_PER_TREE = 378 * 365 * 40; // liters per tree over 40 years
+        const SOIL_PER_TREE = 200 * 40; // kg per tree over 40 years
+        const SPECIES_PER_TREE = 10; // species supported per tree
+
+        function updateMetrics(numTrees) {
+            const totalCO2 = numTrees * CO2_PER_TREE;
+            const totalOxygen = numTrees * OXYGEN_PER_TREE;
+            const totalWater = numTrees * WATER_PER_TREE;
+            const totalSoil = numTrees * SOIL_PER_TREE;
+            const totalSpecies = numTrees * SPECIES_PER_TREE;
+
+            co2Output.textContent = totalCO2;
+            oxygenOutput.textContent = totalOxygen;
+            waterOutput.textContent = totalWater;
+            soilOutput.textContent = totalSoil;
+            speciesOutput.textContent = totalSpecies;
+
+            co2SequesteredInput.value = totalCO2;
+            oxygenProducedInput.value = totalOxygen;
+            waterRetainedInput.value = totalWater;
+            soilPreservedInput.value = totalSoil;
+            speciesSupportedInput.value = totalSpecies;
+        }
+
+        numTreesInput.addEventListener("input", function() {
+            updateMetrics(Number(numTreesInput.value));
+        });
+
+        co2SequesteredInput.addEventListener("input", function() {
+            const ratio = co2SequesteredInput.value / (numTreesInput.value * CO2_PER_TREE);
+            const numTrees = Math.floor(co2SequesteredInput.value / CO2_PER_TREE);
+            numTreesInput.value = numTrees;
+            updateMetrics(numTrees);
+        });
+
+        oxygenProducedInput.addEventListener("input", function() {
+            const ratio = oxygenProducedInput.value / (numTreesInput.value * OXYGEN_PER_TREE);
+            const numTrees = Math.floor(oxygenProducedInput.value / OXYGEN_PER_TREE);
+            numTreesInput.value = numTrees;
+            updateMetrics(numTrees);
+        });
+
+        waterRetainedInput.addEventListener("input", function() {
+            const ratio = waterRetainedInput.value / (numTreesInput.value * WATER_PER_TREE);
+            const numTrees = Math.floor(waterRetainedInput.value / WATER_PER_TREE);
+            numTreesInput.value = numTrees;
+            updateMetrics(numTrees);
+        });
+
+        soilPreservedInput.addEventListener("input", function() {
+            const ratio = soilPreservedInput.value / (numTreesInput.value * SOIL_PER_TREE);
+            const numTrees = Math.floor(soilPreservedInput.value / SOIL_PER_TREE);
+            numTreesInput.value = numTrees;
+            updateMetrics(numTrees);
+        });
+
+        speciesSupportedInput.addEventListener("input", function() {
+            const ratio = speciesSupportedInput.value / (numTreesInput.value * SPECIES_PER_TREE);
+            const numTrees = Math.floor(speciesSupportedInput.value / SPECIES_PER_TREE);
+            numTreesInput.value = numTrees;
+            updateMetrics(numTrees);
+        });
+
+        // Initial load
+        updateMetrics(100);
+    </script>
+</body>
+</html>

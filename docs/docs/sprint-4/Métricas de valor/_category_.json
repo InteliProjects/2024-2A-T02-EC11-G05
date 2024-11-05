@@ -1,0 +1,11 @@
+{
+    "position": 4,
+    "label": "Métricas de valor",
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "generated-index",
+      "description": "Nesta secção encontram-se todos os artefatos relacionados a métricas de valor"
+    }
+  }
